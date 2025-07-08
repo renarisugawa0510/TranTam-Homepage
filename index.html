@@ -19,11 +19,10 @@
     </audio>
 
     <div class="main-content">
-        <img src="./images/avatar.png" alt="Avatar" class="avatar">
-        <h1>TranTam</h1>
-        <div id="pickupLine" class="pickup-line"></div>
+        <img src="./images/avatar.png" alt="Avatar" class="avatar" id="avatarClick"> <h1 id="nameClick">TranTam</h1> <div id="pickupLine" class="pickup-line"></div>
         <div class="timer" id="countdown">00:00:00</div> 
-    </div>
+        
+        </div>
 
     <script>
         // === Script cho đồng hồ hiển thị giờ hiện tại ===
@@ -72,6 +71,24 @@
 
         changePickupLine(); // Hiển thị câu đầu tiên ngay lập tức
         setInterval(changePickupLine, 5000); // Chuyển câu sau mỗi 5 giây
+
+        // === Script cho hiệu ứng click ===
+        const clickableElements = document.querySelectorAll('#avatarClick, #nameClick, #pickupLine, #countdown');
+
+        clickableElements.forEach(element => {
+            element.addEventListener('click', function() {
+                // Loại bỏ class 'clicked' khỏi tất cả các phần tử khác (để tránh nhiều hiệu ứng cùng lúc)
+                document.querySelectorAll('.clicked').forEach(el => el.classList.remove('clicked'));
+                
+                // Thêm class 'clicked' vào phần tử vừa click
+                this.classList.add('clicked');
+
+                // Xóa class 'clicked' sau một khoảng thời gian để animation có thể lặp lại
+                setTimeout(() => {
+                    this.classList.remove('clicked');
+                }, 500); // Thời gian này nên khớp với duration của animation trong CSS
+            });
+        });
     </script>
 </body>
 </html>

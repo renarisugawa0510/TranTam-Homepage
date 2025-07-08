@@ -36,11 +36,12 @@ body {
     display: none;
 }
 
-/* Kiểu dáng cho khung nội dung chính (main-content) */
+/* Kiểu dáng cho khung nội dung chính (main-content) - KHÔNG CÓ VIỀN ĐEN/NỀN MỜ */
 .main-content {
     text-align: center; /* Đảm bảo nội dung bên trong được căn giữa */
     max-width: 600px; /* Giới hạn chiều rộng để nội dung không quá rộng trên màn hình lớn */
     width: 90%; /* Chiếm 90% chiều rộng có sẵn */
+    /* Đã loại bỏ các thuộc tính background, padding, border-radius, box-shadow, backdrop-filter */
 }
 
 /* Kiểu dáng cho ảnh đại diện (avatar) */
@@ -52,6 +53,18 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Thêm bóng */
     object-fit: cover; /* Đảm bảo ảnh điền đầy khung hình tròn */
     margin-bottom: 20px; /* Khoảng cách dưới avatar */
+    cursor: pointer; /* Biểu tượng con trỏ để cho biết có thể click */
+    transition: transform 0.1s ease-out; /* Để hiệu ứng click mượt mà hơn */
+}
+
+/* Kiểu dáng cho tiêu đề h1 (tên) */
+h1 {
+    font-size: 2.8em; /* Kích thước font lớn hơn */
+    margin: 10px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bóng chữ đậm hơn */
+    font-weight: 600; /* Đậm hơn */
+    cursor: pointer; /* Biểu tượng con trỏ */
+    transition: transform 0.1s ease-out, color 0.1s ease-out;
 }
 
 /* Kiểu dáng cho đoạn văn bản p và câu thính tự động chuyển đổi */
@@ -63,17 +76,83 @@ p, .pickup-line {
     max-width: 80%;
     text-align: center;
     min-height: 2em; /* Đảm bảo chiều cao tối thiểu để tránh layout nhảy khi câu đổi */
+    cursor: pointer; /* Biểu tượng con trỏ */
+    transition: transform 0.1s ease-out, color 0.1s ease-out;
 }
 
-/* Kiểu dáng riêng cho đồng hồ đếm ngược */
+/* Kiểu dáng riêng cho đồng hồ đếm ngược - KHÔNG CÓ VIỀN ĐEN/NỀN MỜ */
 .timer {
     font-family: 'Roboto Mono', monospace; /* Sử dụng font đơn cách điệu cho đồng hồ */
     font-size: 2.2em; /* Kích thước lớn */
     color: #ffffff; /* Màu trắng */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bóng chữ */
     margin-top: 20px; /* Khoảng cách trên đồng hồ */
-    background: rgba(0, 0, 0, 0.4); /* Nền mờ cho đồng hồ */
-    padding: 5px 12px;
-    border-radius: 8px;
-    display: inline-block; /* Để background chỉ bao quanh nội dung */
+    /* Đã loại bỏ các thuộc tính background, padding, border-radius */
+    display: inline-block; /* Để text-shadow hiển thị tốt hơn */
+    cursor: pointer; /* Biểu tượng con trỏ */
+    transition: transform 0.1s ease-out, color 0.1s ease-out;
+}
+
+/* --- Hiệu ứng khi click --- */
+
+/* Animation chung cho tất cả các phần tử có class 'clicked' */
+.clicked {
+    animation: popEffect 0.2s ease-out; /* Hiệu ứng phồng lên/xẹp xuống */
+}
+
+/* Keyframes cho hiệu ứng pop */
+@keyframes popEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); } /* Phóng to nhẹ */
+    100% { transform: scale(1); } /* Trở về kích thước ban đầu */
+}
+
+/* Hiệu ứng cụ thể hơn cho từng phần tử khi click */
+
+/* Avatar */
+#avatarClick.clicked {
+    animation: bounceAndSpin 0.5s ease-out; /* Nảy và xoay */
+}
+
+@keyframes bounceAndSpin {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(45deg); }
+    50% { transform: translateY(0) rotate(90deg); }
+    75% { transform: translateY(-5px) rotate(135deg); }
+    100% { transform: translateY(0) rotate(180deg); }
+}
+
+/* Tên (h1) */
+#nameClick.clicked {
+    animation: pulseColor 0.5s ease-out; /* Đổi màu và nhấp nháy */
+}
+
+@keyframes pulseColor {
+    0% { color: #ffffff; transform: scale(1); }
+    50% { color: #87CEEB; transform: scale(1.02); } /* Màu xanh nhạt */
+    100% { color: #ffffff; transform: scale(1); }
+}
+
+/* Câu thính (pickup-line) */
+#pickupLine.clicked {
+    animation: shakeText 0.4s ease-in-out; /* Lắc nhẹ chữ */
+}
+
+@keyframes shakeText {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Đồng hồ (timer) */
+#countdown.clicked {
+    animation: glowAndPulse 0.5s ease-out; /* Sáng lên và nhấp nháy */
+}
+
+@keyframes glowAndPulse {
+    0% { text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); transform: scale(1); }
+    50% { text-shadow: 0 0 15px #87CEEB, 0 0 25px #87CEEB; transform: scale(1.02); } /* Sáng xanh */
+    100% { text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); transform: scale(1); }
 }

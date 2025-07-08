@@ -12,6 +12,11 @@ body {
     align-items: center;
     position: relative; /* Quan trọng: để nội dung chính nằm trên video */
     z-index: 1; /* Đảm bảo nội dung nằm trên video */
+    
+    /* Thêm thuộc tính này để đảm bảo các phần tử không bị ảnh hưởng bởi căn giữa chung */
+    /* Tuy nhiên, với position: fixed, nó không ảnh hưởng trực tiếp đến vị trí đồng hồ */
+    /* Nó chỉ hữu ích cho các phần tử tĩnh khác trong body */
+    /* text-align: center; */ /* Bạn có thể bỏ dòng này nếu muốn */
 
     /* Font chữ và màu chữ mặc định cho body */
     font-family: 'Poppins', sans-serif;
@@ -31,8 +36,7 @@ body {
 
 /* Kiểu dáng cho khung nội dung chính (main-content) */
 .main-content {
-    text-align: center;
-    /* Bạn có thể bỏ comment dòng background và padding nếu muốn có hộp mờ bao quanh nội dung */
+    text-align: center; /* Vẫn giữ căn giữa cho nội dung chính */
     /* background: rgba(0, 0, 0, 0.5); */
     /* padding: 20px; */
     /* border-radius: 15px; */
@@ -73,11 +77,10 @@ p, .pickup-line {
 /* Kiểu dáng riêng cho đồng hồ đếm ngược */
 .timer {
     font-family: 'Roboto Mono', monospace;
-    font-size: 1.8em; /* Giảm kích thước một chút để vừa vặn hơn ở góc */
+    font-size: 1.8em; /* Giữ kích thước này */
     color: #ffffff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     
-    /* Các thuộc tính mới để đặt ở góc dưới bên phải */
     position: fixed; /* Đặt vị trí cố định trên màn hình */
     bottom: 20px; /* Cách lề dưới 20px */
     right: 20px; /* Cách lề phải 20px */
@@ -85,4 +88,9 @@ p, .pickup-line {
     background: rgba(0, 0, 0, 0.4); /* Thêm nền mờ nhẹ để dễ nhìn hơn */
     padding: 8px 15px; /* Khoảng đệm bên trong */
     border-radius: 8px; /* Bo tròn góc */
+    
+    /* Đảm bảo nó không bị ảnh hưởng bởi căn giữa */
+    text-align: center; /* Căn giữa nội dung bên trong timer nếu nó có nhiều dòng */
+    width: fit-content; /* Đảm bảo chiều rộng vừa với nội dung */
+    white-space: nowrap; /* Ngăn không cho chữ xuống dòng */
 }

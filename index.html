@@ -11,14 +11,15 @@
     <div class="main-content">
         <img src="./images/avatar.png" alt="Avatar" class="avatar">
         <h1>TranTam</h1>
-        <p>Anh béo này là bối vì trong lòng anh có em nữa.</p>
+        <div id="pickupLine" class="pickup-line"></div> 
         <div class="timer" id="countdown">00:00:00</div>
     </div>
 
     <script>
+        // === Script cho đồng hồ đếm ngược (giữ nguyên) ===
         // Thiết lập ngày giờ mục tiêu cho đồng hồ đếm ngược
         // Bạn có thể thay đổi giá trị này
-        // Ví dụ: new Date("Jul 25, 2025 15:37:25").getTime();
+        // Ví dụ: var targetDate = new Date("Jul 25, 2025 15:37:25").getTime();
         var targetDate = new Date("Aug 1, 2025 00:00:00").getTime(); // Ví dụ: 1/8/2025 00:00:00
 
         var x = setInterval(function() {
@@ -42,6 +43,37 @@
                 document.getElementById("countdown").innerHTML = "HẾT GIỜ!";
             }
         }, 1000);
+
+        // === Script mới cho các câu thính tự động chuyển đổi ===
+        const pickupLines = [
+            "Anh béo này là bối vì trong lòng anh có em nữa.",
+            "Em có tin vào tình yêu sét đánh không? Hay để anh đi qua lần nữa?",
+            "Nếu em là Google, anh sẽ search em cả ngày.",
+            "Trái Đất tròn, nhưng không bằng nụ cười của em.",
+            "Em có thấy nóng không? Hay là do em đang đứng gần anh?",
+            "Gió đưa cành trúc la đà, liệu em có muốn làm người yêu anh không ta?",
+            "Ngoài kia bão tố phong ba, liệu em có muốn về nhà với anh không?",
+            "Anh yêu em không phải vì em xinh đẹp, mà vì trong tim anh chỉ có em.",
+            "Cho anh mượn chút oxy được không? Anh đang thiếu hơi em rồi.",
+            "Em ơi cho hỏi đường nào đến tim em vậy?",
+            "Anh chỉ muốn nói... em là tất cả của anh.",
+            "Nhìn em, anh biết anh đã tìm thấy bến đỗ."
+            // Bạn có thể thêm nhiều câu khác vào đây
+        ];
+
+        let currentLineIndex = 0;
+        const pickupLineElement = document.getElementById('pickupLine');
+
+        function changePickupLine() {
+            pickupLineElement.textContent = pickupLines[currentLineIndex];
+            currentLineIndex = (currentLineIndex + 1) % pickupLines.length; // Chuyển sang câu tiếp theo
+        }
+
+        // Gọi hàm lần đầu tiên để hiển thị câu thính ban đầu
+        changePickupLine();
+
+        // Thiết lập thời gian chuyển đổi (ví dụ: mỗi 5 giây)
+        setInterval(changePickupLine, 5000); // 5000 milliseconds = 5 giây (có thể thay đổi số này)
     </script>
 </body>
 </html>

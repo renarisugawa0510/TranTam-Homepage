@@ -7,7 +7,7 @@ body {
     overflow: hidden; /* Ngăn cuộn trang nếu không cần thiết */
 
     /* Thiết lập hình nền */
-    background-image: url('./images/background.jpg'); /* Đổi tên tệp cho đúng */
+    background-image: url('./images/background.gif'); /* Đảm bảo tên tệp khớp chính xác. Nếu là JPG, hãy đổi lại. */
     background-size: cover; /* Phủ toàn bộ màn hình, cắt bớt nếu cần */
     background-position: center center; /* Căn giữa hình nền */
     background-repeat: no-repeat; /* Không lặp lại hình nền */
@@ -26,10 +26,10 @@ body {
 /* Kiểu dáng cho khung nội dung chính (main-content) */
 .main-content {
     text-align: center;
-    /* Loại bỏ background và padding của hộp xám cũ */
-    /* background: rgba(0, 0, 0, 0.5); /* Nếu muốn có nền mờ nhẹ */
+    /* Bạn có thể bỏ comment dòng background và padding nếu muốn có hộp mờ bao quanh nội dung */
+    /* background: rgba(0, 0, 0, 0.5); */ 
     /* padding: 20px; */
-    /* border-radius: 15px; */ /* Giữ lại nếu muốn các phần tử bên trong bo tròn */
+    /* border-radius: 15px; */
 }
 
 /* Kiểu dáng cho ảnh đại diện (avatar) */
@@ -51,18 +51,23 @@ h1 {
     font-weight: 600; /* Đậm hơn */
 }
 
-/* Kiểu dáng cho đoạn văn bản p */
-p {
-    font-size: 1.2em;
-    margin: 5px 0 20px 0;
+/* Kiểu dáng cho đoạn văn bản p (nếu bạn vẫn dùng thẻ <p> cho nội dung khác)
+   HOẶC cho câu thính tự động chuyển đổi (class="pickup-line") 
+   Tôi đã kết hợp các thuộc tính chung vào đây để bạn dễ quản lý.
+*/
+p, .pickup-line {
+    font-size: 1.2em; /* Kích thước chữ */
+    margin: 5px 0 20px 0; /* Khoảng cách trên và dưới */
     color: #e0e0e0; /* Màu chữ hơi xám nhẹ */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Bóng chữ */
     max-width: 80%; /* Giới hạn chiều rộng để chữ không quá dài */
-    margin-left: auto; /* Căn giữa đoạn văn */
+    margin-left: auto; /* Căn giữa đoạn văn/câu thính */
     margin-right: auto;
+    text-align: center; /* Căn giữa nội dung */
+    min-height: 2em; /* Giúp giữ không gian, tránh layout bị nhảy khi câu ngắn/dài */
 }
 
-/* Kiểu dáng cho đồng hồ đếm ngược */
+/* Kiểu dáng riêng cho đồng hồ đếm ngược */
 .timer {
     font-family: 'Roboto Mono', monospace; /* Sử dụng font đơn cách điệu cho đồng hồ */
     font-size: 2.2em; /* Kích thước lớn */

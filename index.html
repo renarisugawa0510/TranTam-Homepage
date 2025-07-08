@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TranTam - Home</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TranTam - Trang chủ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="overlay">
-    <img src="images/avatar.png" alt="Avatar" class="avatar">
-    <h1>TranTam</h1>
-    <p>Anh béo thế này là bởi vì trong lòng anh có em nữa.</p>
-    <div class="timer" id="timer">00:00:00</div>
-  </div>
+    <div class="main-content">
+        <img src="./images/avatar.png" alt="Avatar" class="avatar">
+        <h1>TranTam</h1>
+        <p>Anh béo này là bối vì trong lòng anh có em nữa.</p>
+        <div class="timer" id="countdown">00:00:00</div>
+    </div>
 
-  <script>
-    let start = new Date();
-    function updateTimer() {
-      let now = new Date();
-      let diff = new Date(now - start);
-      let h = String(diff.getUTCHours()).padStart(2, '0');
-      let m = String(diff.getUTCMinutes()).padStart(2, '0');
-      let s = String(diff.getUTCSeconds()).padStart(2, '0');
-      document.getElementById('timer').textContent = `${h}:${m}:${s}`;
-    }
-    setInterval(updateTimer, 1000);
-  </script>
+    <script>
+        // Thiết lập ngày giờ mục tiêu cho đồng hồ đếm ngược
+        // Bạn có thể thay đổi giá trị này
+        // Ví dụ: new Date("Jul 25, 2025 15:37:25").getTime();
+        var targetDate = new Date("Aug 1, 2025 00:00:00").getTime(); // Ví dụ: 1/8/2025 00:00:00
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = targetDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Hiển thị giờ:phút:giây
+            document.getElementById("countdown").innerHTML = 
+                (hours < 10 ? "0" + hours : hours) + ":" +
+                (minutes < 10 ? "0" + minutes : minutes) + ":" +
+                (seconds < 10 ? "0" + seconds : seconds);
+
+            // Nếu đồng hồ đếm ngược kết thúc
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "HẾT GIỜ!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>

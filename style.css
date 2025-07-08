@@ -1,42 +1,72 @@
+/* Thiết lập CSS cơ bản cho toàn bộ trang */
 body {
-  margin: 0;
-  padding: 0;
-  background: url('images/background.gif') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+    width: 100vw;  /* Chiếm toàn bộ chiều rộng màn hình */
+    overflow: hidden; /* Ngăn cuộn trang nếu không cần thiết */
+
+    /* Thiết lập hình nền */
+    background-image: url('./images/background.gif'); /* Đổi tên tệp cho đúng */
+    background-size: cover; /* Phủ toàn bộ màn hình, cắt bớt nếu cần */
+    background-position: center center; /* Căn giữa hình nền */
+    background-repeat: no-repeat; /* Không lặp lại hình nền */
+    background-attachment: fixed; /* Giữ hình nền cố định khi cuộn trang */
+
+    /* Căn giữa nội dung chính */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Font chữ và màu chữ mặc định cho body */
+    font-family: 'Poppins', sans-serif; /* Sử dụng font Poppins (cần kết nối Google Fonts trong HTML) */
+    color: #ffffff; /* Màu chữ trắng */
 }
 
-.overlay {
-  text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 15px;
+/* Kiểu dáng cho khung nội dung chính (main-content) */
+.main-content {
+    text-align: center;
+    /* Loại bỏ background và padding của hộp xám cũ */
+    /* background: rgba(0, 0, 0, 0.5); /* Nếu muốn có nền mờ nhẹ */
+    /* padding: 20px; */
+    /* border-radius: 15px; */ /* Giữ lại nếu muốn các phần tử bên trong bo tròn */
 }
 
+/* Kiểu dáng cho ảnh đại diện (avatar) */
 .avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 4px solid #fff;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Làm cho ảnh tròn */
+    border: 4px solid #ffffff; /* Viền trắng */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Thêm bóng */
+    object-fit: cover; /* Đảm bảo ảnh điền đầy khung hình tròn */
+    margin-bottom: 20px; /* Khoảng cách dưới avatar */
 }
 
+/* Kiểu dáng cho tiêu đề h1 (tên) */
 h1 {
-  font-size: 2.5em;
-  margin: 15px 0 5px 0;
+    font-size: 2.8em; /* Kích thước font lớn hơn */
+    margin: 10px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bóng chữ đậm hơn */
+    font-weight: 600; /* Đậm hơn */
 }
 
+/* Kiểu dáng cho đoạn văn bản p */
 p {
-  margin: 10px 0;
+    font-size: 1.2em;
+    margin: 5px 0 20px 0;
+    color: #e0e0e0; /* Màu chữ hơi xám nhẹ */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Bóng chữ */
+    max-width: 80%; /* Giới hạn chiều rộng để chữ không quá dài */
+    margin-left: auto; /* Căn giữa đoạn văn */
+    margin-right: auto;
 }
 
+/* Kiểu dáng cho đồng hồ đếm ngược */
 .timer {
-  font-size: 1.5em;
-  margin-top: 15px;
+    font-family: 'Roboto Mono', monospace; /* Sử dụng font đơn cách điệu cho đồng hồ */
+    font-size: 2.2em; /* Kích thước lớn */
+    color: #ffffff; /* Màu trắng */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bóng chữ */
+    margin-top: 20px;
 }
-
-/* Trigger build */

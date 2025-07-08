@@ -6,7 +6,7 @@
     <title>TranTam - Trang chủ</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <video autoplay muted loop id="background-video">
@@ -55,29 +55,27 @@
     </div>
 
     <script>
-        // === Script cho đồng hồ đếm ngược (giữ nguyên) ===
-        var targetDate = new Date("Aug 1, 2025 00:00:00").getTime();
+        // === Script cho đồng hồ hiển thị giờ hiện tại ===
+        function updateTime() {
+            const now = new Date(); 
+            
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
 
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = targetDate - now;
+            // Định dạng để luôn có 2 chữ số (ví dụ: 08 thay vì 8)
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
 
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById('countdown').innerHTML = hours + ':' + minutes + ':' + seconds;
+        }
 
-            document.getElementById("countdown").innerHTML = 
-                (hours < 10 ? "0" + hours : hours) + ":" +
-                (minutes < 10 ? "0" + minutes : minutes) + ":" +
-                (seconds < 10 ? "0" + seconds : seconds);
+        // Cập nhật thời gian ngay khi tải trang và mỗi giây sau đó
+        updateTime(); 
+        setInterval(updateTime, 1000); 
 
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "HẾT GIỜ!";
-            }
-        }, 1000);
-
-        // === Script cho các câu thính tự động chuyển đổi (giữ nguyên) ===
+        // === Script cho các câu thính tự động chuyển đổi ===
         const pickupLines = [
             "Anh béo này là bối vì trong lòng anh có em nữa.",
             "Em có tin vào tình yêu sét đánh không? Hay để anh đi qua lần nữa?",
@@ -101,8 +99,8 @@
             currentLineIndex = (currentLineIndex + 1) % pickupLines.length;
         }
 
-        changePickupLine();
-        setInterval(changePickupLine, 5000);
+        changePickupLine(); // Hiển thị câu đầu tiên ngay lập tức
+        setInterval(changePickupLine, 5000); // Chuyển câu sau mỗi 5 giây
     </script>
 </body>
 </html>

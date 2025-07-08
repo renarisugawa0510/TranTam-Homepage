@@ -40,11 +40,14 @@ body {
 .main-content {
     text-align: center; /* Đảm bảo nội dung bên trong được căn giữa */
     /* Có thể bỏ comment background và padding nếu muốn có hộp mờ bao quanh toàn bộ nội dung */
-    /* background: rgba(0, 0, 0, 0.5); */
-    /* padding: 20px; */
-    /* border-radius: 15px; */
+    background: rgba(0, 0, 0, 0.5); /* Nền mờ cho toàn bộ khung nội dung chính */
+    padding: 30px 20px; /* Tăng padding để nội dung có không gian hơn */
+    border-radius: 15px;
     max-width: 600px; /* Giới hạn chiều rộng để nội dung không quá rộng trên màn hình lớn */
     width: 90%; /* Chiếm 90% chiều rộng có sẵn */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7); /* Bóng đổ mạnh hơn */
+    backdrop-filter: blur(5px); /* Hiệu ứng làm mờ nền phía sau */
+    -webkit-backdrop-filter: blur(5px); /* Hỗ trợ trình duyệt Safari */
 }
 
 /* Kiểu dáng cho ảnh đại diện (avatar) */
@@ -74,7 +77,7 @@ p, .pickup-line {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     max-width: 80%;
     text-align: center;
-    min-height: 2em;
+    min-height: 2em; /* Đảm bảo chiều cao tối thiểu để tránh layout nhảy khi câu đổi */
 }
 
 /* Kiểu dáng riêng cho đồng hồ đếm ngược */
@@ -84,13 +87,16 @@ p, .pickup-line {
     color: #ffffff; /* Màu trắng */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bóng chữ */
     margin-top: 20px; /* Khoảng cách trên đồng hồ */
-    /* Các thuộc tính định vị cố định đã bị loại bỏ để nó trở lại luồng tài liệu và căn giữa bởi main-content */
+    background: rgba(0, 0, 0, 0.4); /* Nền mờ cho đồng hồ */
+    padding: 5px 12px;
+    border-radius: 8px;
+    display: inline-block; /* Để background chỉ bao quanh nội dung */
 }
 
 /* --- Kiểu dáng cho các phần mới (Bio, Payments) --- */
 
 .section {
-    background: rgba(0, 0, 0, 0.6); /* Nền hơi trong suốt */
+    background: rgba(0, 0, 0, 0.6); /* Nền hơi trong suốt cho mỗi section */
     padding: 15px 20px;
     border-radius: 10px;
     margin-top: 25px; /* Khoảng cách giữa các phần */

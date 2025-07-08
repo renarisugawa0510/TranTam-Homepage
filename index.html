@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TranTam - Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay">
+    <img src="images/avatar.png" alt="Avatar" class="avatar">
+    <h1>TranTam</h1>
+    <p>Anh béo thế này là bởi vì trong lòng anh có em nữa.</p>
+    <div class="timer" id="timer">00:00:00</div>
+  </div>
+
+  <script>
+    let start = new Date();
+    function updateTimer() {
+      let now = new Date();
+      let diff = new Date(now - start);
+      let h = String(diff.getUTCHours()).padStart(2, '0');
+      let m = String(diff.getUTCMinutes()).padStart(2, '0');
+      let s = String(diff.getUTCSeconds()).padStart(2, '0');
+      document.getElementById('timer').textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>

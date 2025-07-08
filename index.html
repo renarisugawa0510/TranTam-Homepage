@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TranTam - Trang chủ</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,11 +14,44 @@
         Trình duyệt của bạn không hỗ trợ video HTML5.
     </video>
 
+    <audio autoplay loop muted id="background-audio">
+        <source src="./images/background_music.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ audio HTML5.
+    </audio>
+
     <div class="main-content">
         <img src="./images/avatar.png" alt="Avatar" class="avatar">
         <h1>TranTam</h1>
         <div id="pickupLine" class="pickup-line"></div>
         <div class="timer" id="countdown">00:00:00</div> 
+
+        <div class="section bio-section">
+            <h2 class="section-title">Bio</h2>
+            <div class="bio-details">
+                <p class="bio-item"><i class="fas fa-code icon-margin"></i> Developer / Designer / Vexer</p>
+                <p class="bio-item">Hello, my name is TranTam. I am a freelance programmer, with a passion for coding driven by pure interest.</p>
+                <p class="bio-item">My main interest lies in back-end.</p>
+            </div>
+        </div>
+
+        <div class="section payment-section">
+            <h2 class="section-title">Payments</h2>
+            <div class="payment-links">
+                <a href="#" class="payment-item">
+                    <i class="fas fa-wallet icon-margin"></i> 2568779779
+                </a>
+                <a href="#" class="payment-item">
+                    <i class="fas fa-wallet icon-margin"></i> 549537777
+                </a>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://github.com/renarisuugawa0510" target="_blank" class="social-icon">
+                <i class="fab fa-github"></i> My Github
+            </a>
+            </div>
+
     </div>
 
     <script>
@@ -28,7 +62,6 @@
             var now = new Date().getTime();
             var distance = targetDate - now;
 
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);

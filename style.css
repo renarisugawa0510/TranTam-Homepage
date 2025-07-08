@@ -39,7 +39,6 @@ body {
 /* Kiểu dáng cho khung nội dung chính (main-content) */
 .main-content {
     text-align: center; /* Đảm bảo nội dung bên trong được căn giữa */
-    /* Có thể bỏ comment background và padding nếu muốn có hộp mờ bao quanh toàn bộ nội dung */
     background: rgba(0, 0, 0, 0.5); /* Nền mờ cho toàn bộ khung nội dung chính */
     padding: 30px 20px; /* Tăng padding để nội dung có không gian hơn */
     border-radius: 15px;
@@ -91,6 +90,7 @@ p, .pickup-line {
     padding: 5px 12px;
     border-radius: 8px;
     display: inline-block; /* Để background chỉ bao quanh nội dung */
+    margin-bottom: 25px; /* Khoảng cách dưới timer, trước các section mới */
 }
 
 /* --- Kiểu dáng cho các phần mới (Bio, Payments) --- */
@@ -118,7 +118,7 @@ p, .pickup-line {
 .bio-item {
     font-size: 1.1em;
     color: #e0e0e0;
-    margin-bottom: 8px;
+    margin-bottom: 8px; /* Khoảng cách giữa các dòng trong Bio */
     text-align: left; /* Đảm bảo văn bản bio căn trái */
     text-shadow: none; /* Bỏ bóng chữ nếu không cần */
 }
@@ -154,7 +154,7 @@ p, .pickup-line {
 }
 
 .social-links {
-    margin-top: 30px;
+    margin-top: 30px; /* Khoảng cách trên các icon mạng xã hội */
     display: flex;
     justify-content: center; /* Căn giữa các icon mạng xã hội */
     gap: 20px; /* Khoảng cách giữa các icon */

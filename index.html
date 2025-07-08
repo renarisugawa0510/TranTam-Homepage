@@ -17,11 +17,12 @@
         <img src="./images/avatar.png" alt="Avatar" class="avatar">
         <h1>TranTam</h1>
         <div id="pickupLine" class="pickup-line"></div>
-        <div class="timer" id="countdown">00:00:00</div>
-    </div>
+        </div>
+
+    <div class="timer" id="countdown">00:00:00</div>
 
     <script>
-        // === Script cho đồng hồ đếm ngược ===
+        // === Script cho đồng hồ đếm ngược (giữ nguyên) ===
         var targetDate = new Date("Aug 1, 2025 00:00:00").getTime();
 
         var x = setInterval(function() {
@@ -44,7 +45,7 @@
             }
         }, 1000);
 
-        // === Script cho các câu thính tự động chuyển đổi ===
+        // === Script cho các câu thính tự động chuyển đổi (giữ nguyên) ===
         const pickupLines = [
             "Anh béo này là bối vì trong lòng anh có em nữa.",
             "Em có tin vào tình yêu sét đánh không? Hay để anh đi qua lần nữa?",

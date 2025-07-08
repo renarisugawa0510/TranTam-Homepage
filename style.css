@@ -6,8 +6,6 @@ body {
     width: 100vw;  /* Chiếm toàn bộ chiều rộng màn hình */
     overflow: hidden; /* Ngăn cuộn trang nếu không cần thiết */
 
-    /* background-image và các thuộc tính liên quan đã được di chuyển sang video element */
-
     /* Căn giữa nội dung chính */
     display: flex;
     justify-content: center;
@@ -23,13 +21,12 @@ body {
 /* Kiểu dáng cho video nền */
 #background-video {
     position: fixed; /* Giữ video cố định trên màn hình */
-    top: 0; /* Đảm bảo video bắt đầu từ mép trên */
-    left: 0; /* Đảm bảo video bắt đầu từ mép trái */
+    top: 0;
+    left: 0;
     width: 100%; /* Chiếm 100% chiều rộng của viewport */
     height: 100%; /* Chiếm 100% chiều cao của viewport */
     object-fit: cover; /* Đảm bảo video lấp đầy và có thể bị cắt để không còn khoảng trống */
     z-index: -1; /* Đặt video dưới cùng */
-    /* background-size: cover; <-- thuộc tính này chỉ dành cho background-image, không cần cho video */
 }
 
 /* Kiểu dáng cho khung nội dung chính (main-content) */
@@ -76,8 +73,16 @@ p, .pickup-line {
 /* Kiểu dáng riêng cho đồng hồ đếm ngược */
 .timer {
     font-family: 'Roboto Mono', monospace;
-    font-size: 2.2em;
+    font-size: 1.8em; /* Giảm kích thước một chút để vừa vặn hơn ở góc */
     color: #ffffff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    margin-top: 20px;
+    
+    /* Các thuộc tính mới để đặt ở góc dưới bên phải */
+    position: fixed; /* Đặt vị trí cố định trên màn hình */
+    bottom: 20px; /* Cách lề dưới 20px */
+    right: 20px; /* Cách lề phải 20px */
+    z-index: 10; /* Đảm bảo nó luôn nằm trên các phần tử khác */
+    background: rgba(0, 0, 0, 0.4); /* Thêm nền mờ nhẹ để dễ nhìn hơn */
+    padding: 8px 15px; /* Khoảng đệm bên trong */
+    border-radius: 8px; /* Bo tròn góc */
 }

@@ -54,14 +54,6 @@ body {
     margin-bottom: 20px; /* Khoảng cách dưới avatar */
 }
 
-/* Kiểu dáng cho tiêu đề h1 (tên) */
-h1 {
-    font-size: 2.8em; /* Kích thước font lớn hơn */
-    margin: 10px 0;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bóng chữ đậm hơn */
-    font-weight: 600; /* Đậm hơn */
-}
-
 /* Kiểu dáng cho đoạn văn bản p và câu thính tự động chuyển đổi */
 p, .pickup-line {
     font-size: 1.2em;

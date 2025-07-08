@@ -6,11 +6,7 @@ body {
     width: 100vw;  /* Chiếm toàn bộ chiều rộng màn hình */
     overflow: hidden; /* Ngăn cuộn trang nếu không cần thiết */
 
-    /* background-image: url('./images/background.mp4'); <-- Dòng này sẽ được bỏ hoặc comment lại */
-    /* background-size: cover; */
-    /* background-position: center center; */
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
+    /* background-image và các thuộc tính liên quan đã được di chuyển sang video element */
 
     /* Căn giữa nội dung chính */
     display: flex;
@@ -27,21 +23,20 @@ body {
 /* Kiểu dáng cho video nền */
 #background-video {
     position: fixed; /* Giữ video cố định trên màn hình */
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    top: 0; /* Đảm bảo video bắt đầu từ mép trên */
+    left: 0; /* Đảm bảo video bắt đầu từ mép trái */
+    width: 100%; /* Chiếm 100% chiều rộng của viewport */
+    height: 100%; /* Chiếm 100% chiều cao của viewport */
+    object-fit: cover; /* Đảm bảo video lấp đầy và có thể bị cắt để không còn khoảng trống */
     z-index: -1; /* Đặt video dưới cùng */
-    background-size: cover; /* Đảm bảo video phủ toàn bộ, cắt bớt nếu cần */
+    /* background-size: cover; <-- thuộc tính này chỉ dành cho background-image, không cần cho video */
 }
 
 /* Kiểu dáng cho khung nội dung chính (main-content) */
 .main-content {
     text-align: center;
     /* Bạn có thể bỏ comment dòng background và padding nếu muốn có hộp mờ bao quanh nội dung */
-    /* background: rgba(0, 0, 0, 0.5); */ 
+    /* background: rgba(0, 0, 0, 0.5); */
     /* padding: 20px; */
     /* border-radius: 15px; */
 }

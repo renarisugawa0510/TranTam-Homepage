@@ -36,11 +36,12 @@ body {
     display: none;
 }
 
-/* Kiểu dáng cho khung nội dung chính (main-content) */
+/* Kiểu dáng cho khung nội dung chính (main-content) - KHÔNG CÓ VIỀN ĐEN/NỀN MỜ */
 .main-content {
     text-align: center; /* Đảm bảo nội dung bên trong được căn giữa */
     max-width: 600px; /* Giới hạn chiều rộng để nội dung không quá rộng trên màn hình lớn */
     width: 90%; /* Chiếm 90% chiều rộng có sẵn */
+    /* Đã loại bỏ các thuộc tính background, padding, border-radius, box-shadow, backdrop-filter */
 }
 
 /* Kiểu dáng cho ảnh đại diện (avatar) */
@@ -54,6 +55,14 @@ body {
     margin-bottom: 20px; /* Khoảng cách dưới avatar */
 }
 
+/* Kiểu dáng cho tiêu đề h1 (tên) */
+h1 {
+    font-size: 2.8em; /* Kích thước font lớn hơn */
+    margin: 10px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bóng chữ đậm hơn */
+    font-weight: 600; /* Đậm hơn */
+}
+
 /* Kiểu dáng cho đoạn văn bản p và câu thính tự động chuyển đổi */
 p, .pickup-line {
     font-size: 1.2em;
@@ -65,15 +74,37 @@ p, .pickup-line {
     min-height: 2em; /* Đảm bảo chiều cao tối thiểu để tránh layout nhảy khi câu đổi */
 }
 
-/* Kiểu dáng riêng cho đồng hồ đếm ngược */
+/* Kiểu dáng riêng cho đồng hồ đếm ngược - KHÔNG CÓ VIỀN ĐEN/NỀN MỜ */
 .timer {
     font-family: 'Roboto Mono', monospace; /* Sử dụng font đơn cách điệu cho đồng hồ */
     font-size: 2.2em; /* Kích thước lớn */
     color: #ffffff; /* Màu trắng */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bóng chữ */
     margin-top: 20px; /* Khoảng cách trên đồng hồ */
-    background: rgba(0, 0, 0, 0.4); /* Nền mờ cho đồng hồ */
-    padding: 5px 12px;
+    /* Đã loại bỏ các thuộc tính background, padding, border-radius */
+    display: inline-block; /* Để text-shadow hiển thị tốt hơn */
+}
+
+/* Styles cho nút điều hướng trên index.html */
+.navigation-links {
+    margin-top: 30px; /* Khoảng cách từ đồng hồ đến nút */
+}
+
+.nav-button {
+    display: inline-block;
+    background: #87CEEB; /* Màu nền nút */
+    color: #1a1a2e; /* Màu chữ nút */
+    padding: 12px 25px;
     border-radius: 8px;
-    display: inline-block; /* Để background chỉ bao quanh nội dung */
+    text-decoration: none; /* Bỏ gạch chân */
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    border: 2px solid #87CEEB; /* Viền cùng màu nền */
+    text-shadow: none; /* Đảm bảo không có bóng chữ */
+}
+
+.nav-button:hover {
+    background: transparent; /* Nền trong suốt khi hover */
+    color: #87CEEB; /* Chữ màu xanh khi hover */
+    transform: translateY(-3px); /* Hiệu ứng nhấc nhẹ */
 }

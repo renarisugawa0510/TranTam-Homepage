@@ -1,22 +1,19 @@
 /* Thiết lập CSS cơ bản cho toàn bộ trang */
-body {
+html, body { /* Thêm html vào đây để đảm bảo không có margin/padding mặc định */
     margin: 0;
     padding: 0;
     height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
     width: 100vw;  /* Chiếm toàn bộ chiều rộng màn hình */
     overflow: hidden; /* Ngăn cuộn trang nếu không cần thiết */
+}
 
+body {
     /* Căn giữa nội dung chính */
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative; /* Quan trọng: để nội dung chính nằm trên video */
     z-index: 1; /* Đảm bảo nội dung nằm trên video */
-    
-    /* Thêm thuộc tính này để đảm bảo các phần tử không bị ảnh hưởng bởi căn giữa chung */
-    /* Tuy nhiên, với position: fixed, nó không ảnh hưởng trực tiếp đến vị trí đồng hồ */
-    /* Nó chỉ hữu ích cho các phần tử tĩnh khác trong body */
-    /* text-align: center; */ /* Bạn có thể bỏ dòng này nếu muốn */
 
     /* Font chữ và màu chữ mặc định cho body */
     font-family: 'Poppins', sans-serif;
@@ -36,7 +33,8 @@ body {
 
 /* Kiểu dáng cho khung nội dung chính (main-content) */
 .main-content {
-    text-align: center; /* Vẫn giữ căn giữa cho nội dung chính */
+    text-align: center;
+    /* Bạn có thể bỏ comment dòng background và padding nếu muốn có hộp mờ bao quanh nội dung */
     /* background: rgba(0, 0, 0, 0.5); */
     /* padding: 20px; */
     /* border-radius: 15px; */
@@ -77,20 +75,19 @@ p, .pickup-line {
 /* Kiểu dáng riêng cho đồng hồ đếm ngược */
 .timer {
     font-family: 'Roboto Mono', monospace;
-    font-size: 1.8em; /* Giữ kích thước này */
+    font-size: 1.8em;
     color: #ffffff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     
     position: fixed; /* Đặt vị trí cố định trên màn hình */
-    bottom: 20px; /* Cách lề dưới 20px */
-    right: 20px; /* Cách lề phải 20px */
+    bottom: 15px; /* Giảm khoảng cách từ lề dưới */
+    right: 15px; /* Giảm khoảng cách từ lề phải */
     z-index: 10; /* Đảm bảo nó luôn nằm trên các phần tử khác */
-    background: rgba(0, 0, 0, 0.4); /* Thêm nền mờ nhẹ để dễ nhìn hơn */
-    padding: 8px 15px; /* Khoảng đệm bên trong */
-    border-radius: 8px; /* Bo tròn góc */
-    
-    /* Đảm bảo nó không bị ảnh hưởng bởi căn giữa */
-    text-align: center; /* Căn giữa nội dung bên trong timer nếu nó có nhiều dòng */
-    width: fit-content; /* Đảm bảo chiều rộng vừa với nội dung */
+    background: rgba(0, 0, 0, 0.5); /* Tăng độ mờ nền một chút để dễ nhìn */
+    padding: 8px 12px; /* Điều chỉnh khoảng đệm để nó gọn hơn một chút */
+    border-radius: 6px; /* Bo tròn góc */
+    text-align: center; /* Căn giữa nội dung bên trong timer */
+    width: auto; /* Đảm bảo chiều rộng tự động theo nội dung */
     white-space: nowrap; /* Ngăn không cho chữ xuống dòng */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước tổng */
 }

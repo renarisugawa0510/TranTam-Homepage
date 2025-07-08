@@ -39,6 +39,7 @@ body {
 /* Kiểu dáng cho khung nội dung chính (main-content) */
 .main-content {
     text-align: center; /* Đảm bảo nội dung bên trong được căn giữa */
+    /* Có thể bỏ comment background và padding nếu muốn có hộp mờ bao quanh toàn bộ nội dung */
     background: rgba(0, 0, 0, 0.5); /* Nền mờ cho toàn bộ khung nội dung chính */
     padding: 30px 20px; /* Tăng padding để nội dung có không gian hơn */
     border-radius: 15px;
@@ -90,91 +91,5 @@ p, .pickup-line {
     padding: 5px 12px;
     border-radius: 8px;
     display: inline-block; /* Để background chỉ bao quanh nội dung */
-    margin-bottom: 25px; /* Khoảng cách dưới timer, trước các section mới */
-}
-
-/* --- Kiểu dáng cho các phần mới (Bio, Payments) --- */
-
-.section {
-    background: rgba(0, 0, 0, 0.6); /* Nền hơi trong suốt cho mỗi section */
-    padding: 15px 20px;
-    border-radius: 10px;
-    margin-top: 25px; /* Khoảng cách giữa các phần */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: left; /* Nội dung bên trong section sẽ căn trái */
-}
-
-.section-title {
-    font-size: 1.6em;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* Đường kẻ dưới tiêu đề */
-    padding-bottom: 8px;
-    text-align: center; /* Tiêu đề section căn giữa */
-}
-
-.bio-item {
-    font-size: 1.1em;
-    color: #e0e0e0;
-    margin-bottom: 8px; /* Khoảng cách giữa các dòng trong Bio */
-    text-align: left; /* Đảm bảo văn bản bio căn trái */
-    text-shadow: none; /* Bỏ bóng chữ nếu không cần */
-}
-
-.icon-margin {
-    margin-right: 8px; /* Khoảng cách giữa biểu tượng và văn bản */
-    color: #87CEEB; /* Màu xanh nhẹ cho biểu tượng */
-}
-
-.payment-links {
-    display: flex;
-    flex-wrap: wrap; /* Cho phép các mục xuống dòng nếu không đủ chỗ */
-    justify-content: center; /* Căn giữa các mục thanh toán */
-    gap: 15px; /* Khoảng cách giữa các mục thanh toán */
-    margin-top: 15px;
-}
-
-.payment-item {
-    background: rgba(255, 255, 255, 0.1); /* Nền mờ cho từng mục thanh toán */
-    color: #ffffff;
-    padding: 10px 15px;
-    border-radius: 8px;
-    text-decoration: none; /* Bỏ gạch chân link */
-    font-size: 1.1em;
-    font-weight: 500;
-    transition: background 0.3s ease; /* Hiệu ứng hover */
-    display: flex; /* Để biểu tượng và chữ trên cùng một hàng */
-    align-items: center; /* Căn giữa dọc biểu tượng và chữ */
-}
-
-.payment-item:hover {
-    background: rgba(255, 255, 255, 0.2); /* Nền sáng hơn khi hover */
-}
-
-.social-links {
-    margin-top: 30px; /* Khoảng cách trên các icon mạng xã hội */
-    display: flex;
-    justify-content: center; /* Căn giữa các icon mạng xã hội */
-    gap: 20px; /* Khoảng cách giữa các icon */
-}
-
-.social-icon {
-    color: #ffffff;
-    font-size: 1.2em; /* Kích thước chữ cho link mạng xã hội */
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-.social-icon i {
-    font-size: 1.8em; /* Kích thước lớn hơn cho biểu tượng */
-    margin-right: 8px;
-}
-
-.social-icon:hover {
-    color: #87CEEB; /* Màu xanh khi hover */
-    transform: translateY(-3px); /* Hiệu ứng nhấc nhẹ lên */
+    /* margin-bottom đã được loại bỏ vì không còn các section bên dưới */
 }

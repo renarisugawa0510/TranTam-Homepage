@@ -7,7 +7,7 @@ body {
     overflow: hidden; /* Ngăn cuộn trang nếu không cần thiết */
 
     /* Thiết lập hình nền */
-    background-image: url('./images/background.gif'); /* Đổi tên tệp cho đúng */
+    background-image: url('./images/background.jpg'); /* Đổi tên tệp cho đúng */
     background-size: cover; /* Phủ toàn bộ màn hình, cắt bớt nếu cần */
     background-position: center center; /* Căn giữa hình nền */
     background-repeat: no-repeat; /* Không lặp lại hình nền */

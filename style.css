@@ -1,5 +1,5 @@
 /* Thiết lập CSS cơ bản cho toàn bộ trang */
-html, body { /* Thêm html vào đây để đảm bảo không có margin/padding mặc định */
+html, body {
     margin: 0;
     padding: 0;
     height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
@@ -33,7 +33,7 @@ body {
 
 /* Kiểu dáng cho khung nội dung chính (main-content) */
 .main-content {
-    text-align: center;
+    text-align: center; /* Đảm bảo nội dung bên trong được căn giữa */
     /* Bạn có thể bỏ comment dòng background và padding nếu muốn có hộp mờ bao quanh nội dung */
     /* background: rgba(0, 0, 0, 0.5); */
     /* padding: 20px; */
@@ -44,19 +44,19 @@ body {
 .avatar {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
-    border: 4px solid #ffffff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    object-fit: cover;
-    margin-bottom: 20px;
+    border-radius: 50%; /* Làm cho ảnh tròn */
+    border: 4px solid #ffffff; /* Viền trắng */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Thêm bóng */
+    object-fit: cover; /* Đảm bảo ảnh điền đầy khung hình tròn */
+    margin-bottom: 20px; /* Khoảng cách dưới avatar */
 }
 
 /* Kiểu dáng cho tiêu đề h1 (tên) */
 h1 {
-    font-size: 2.8em;
+    font-size: 2.8em; /* Kích thước font lớn hơn */
     margin: 10px 0;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    font-weight: 600;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bóng chữ đậm hơn */
+    font-weight: 600; /* Đậm hơn */
 }
 
 /* Kiểu dáng cho đoạn văn bản p và câu thính tự động chuyển đổi */
@@ -72,22 +72,12 @@ p, .pickup-line {
     min-height: 2em;
 }
 
-/* Kiểu dáng riêng cho đồng hồ đếm ngược */
+/* Kiểu dáng riêng cho đồng hồ đếm ngược (đã hoàn nguyên) */
 .timer {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1.8em;
-    color: #ffffff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    
-    position: fixed; /* Đặt vị trí cố định trên màn hình */
-    bottom: 15px; /* Giảm khoảng cách từ lề dưới */
-    right: 15px; /* Giảm khoảng cách từ lề phải */
-    z-index: 10; /* Đảm bảo nó luôn nằm trên các phần tử khác */
-    background: rgba(0, 0, 0, 0.5); /* Tăng độ mờ nền một chút để dễ nhìn */
-    padding: 8px 12px; /* Điều chỉnh khoảng đệm để nó gọn hơn một chút */
-    border-radius: 6px; /* Bo tròn góc */
-    text-align: center; /* Căn giữa nội dung bên trong timer */
-    width: auto; /* Đảm bảo chiều rộng tự động theo nội dung */
-    white-space: nowrap; /* Ngăn không cho chữ xuống dòng */
-    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước tổng */
+    font-family: 'Roboto Mono', monospace; /* Sử dụng font đơn cách điệu cho đồng hồ */
+    font-size: 2.2em; /* Kích thước lớn */
+    color: #ffffff; /* Màu trắng */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bóng chữ */
+    margin-top: 20px; /* Khoảng cách trên đồng hồ */
+    /* Các thuộc tính định vị cố định đã bị loại bỏ để nó trở lại luồng tài liệu và căn giữa bởi main-content */
 }

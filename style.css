@@ -6,21 +6,35 @@ body {
     width: 100vw;  /* Chiếm toàn bộ chiều rộng màn hình */
     overflow: hidden; /* Ngăn cuộn trang nếu không cần thiết */
 
-    /* Thiết lập hình nền */
-    background-image: url('./images/background.gif'); /* Đảm bảo tên tệp khớp chính xác. Nếu là JPG, hãy đổi lại. */
-    background-size: cover; /* Phủ toàn bộ màn hình, cắt bớt nếu cần */
-    background-position: center center; /* Căn giữa hình nền */
-    background-repeat: no-repeat; /* Không lặp lại hình nền */
-    background-attachment: fixed; /* Giữ hình nền cố định khi cuộn trang */
+    /* background-image: url('./images/background.mp4'); <-- Dòng này sẽ được bỏ hoặc comment lại */
+    /* background-size: cover; */
+    /* background-position: center center; */
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
 
     /* Căn giữa nội dung chính */
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* Quan trọng: để nội dung chính nằm trên video */
+    z-index: 1; /* Đảm bảo nội dung nằm trên video */
 
     /* Font chữ và màu chữ mặc định cho body */
-    font-family: 'Poppins', sans-serif; /* Sử dụng font Poppins (cần kết nối Google Fonts trong HTML) */
-    color: #ffffff; /* Màu chữ trắng */
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+/* Kiểu dáng cho video nền */
+#background-video {
+    position: fixed; /* Giữ video cố định trên màn hình */
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Đặt video dưới cùng */
+    background-size: cover; /* Đảm bảo video phủ toàn bộ, cắt bớt nếu cần */
 }
 
 /* Kiểu dáng cho khung nội dung chính (main-content) */
@@ -36,42 +50,39 @@ body {
 .avatar {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* Làm cho ảnh tròn */
-    border: 4px solid #ffffff; /* Viền trắng */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Thêm bóng */
-    object-fit: cover; /* Đảm bảo ảnh điền đầy khung hình tròn */
-    margin-bottom: 20px; /* Khoảng cách dưới avatar */
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
 /* Kiểu dáng cho tiêu đề h1 (tên) */
 h1 {
-    font-size: 2.8em; /* Kích thước font lớn hơn */
+    font-size: 2.8em;
     margin: 10px 0;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bóng chữ đậm hơn */
-    font-weight: 600; /* Đậm hơn */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-weight: 600;
 }
 
-/* Kiểu dáng cho đoạn văn bản p (nếu bạn vẫn dùng thẻ <p> cho nội dung khác)
-   HOẶC cho câu thính tự động chuyển đổi (class="pickup-line") 
-   Tôi đã kết hợp các thuộc tính chung vào đây để bạn dễ quản lý.
-*/
+/* Kiểu dáng cho đoạn văn bản p và câu thính tự động chuyển đổi */
 p, .pickup-line {
-    font-size: 1.2em; /* Kích thước chữ */
-    margin: 5px 0 20px 0; /* Khoảng cách trên và dưới */
-    color: #e0e0e0; /* Màu chữ hơi xám nhẹ */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Bóng chữ */
-    max-width: 80%; /* Giới hạn chiều rộng để chữ không quá dài */
-    margin-left: auto; /* Căn giữa đoạn văn/câu thính */
+    font-size: 1.2em;
+    margin: 5px 0 20px 0;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    max-width: 80%;
+    margin-left: auto;
     margin-right: auto;
-    text-align: center; /* Căn giữa nội dung */
-    min-height: 2em; /* Giúp giữ không gian, tránh layout bị nhảy khi câu ngắn/dài */
+    text-align: center;
+    min-height: 2em;
 }
 
 /* Kiểu dáng riêng cho đồng hồ đếm ngược */
 .timer {
-    font-family: 'Roboto Mono', monospace; /* Sử dụng font đơn cách điệu cho đồng hồ */
-    font-size: 2.2em; /* Kích thước lớn */
-    color: #ffffff; /* Màu trắng */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bóng chữ */
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.2em;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     margin-top: 20px;
 }
